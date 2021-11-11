@@ -24,18 +24,37 @@ class Database extends Config
      * @var string
      */
     public $defaultGroup = 'default';
-
     /**
      * The default database connection.
      *
      * @var array
      */
+    // public $default = [
+    //     'DSN'      => '',
+    //     'hostname' => 'localhost',
+    //     'username' => '',
+    //     'password' => '',
+    //     'database' => '',
+    //     'DBDriver' => 'MySQLi',
+    //     'DBPrefix' => '',
+    //     'pConnect' => false,
+    //     'DBDebug'  => (ENVIRONMENT !== 'production'),
+    //     'charset'  => 'utf8',
+    //     'DBCollat' => 'utf8_general_ci',
+    //     'swapPre'  => '',
+    //     'encrypt'  => false,
+    //     'compress' => false,
+    //     'strictOn' => false,
+    //     'failover' => [],
+    //     'port'     => 3306,
+    // ];
+
     public $default = [
-        'DSN'      => '',
+        'DSN'      => 'MySQLi://root:@localhost:3306/ci4tutorial?charset=utf8&DBCollat=utf8_general_ci',
         'hostname' => 'localhost',
-        'username' => '',
+        'username' => 'root',
         'password' => '',
-        'database' => '',
+        'database' => 'ci4tutorial',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -85,6 +104,10 @@ class Database extends Config
         // we don't overwrite live data on accident.
         if (ENVIRONMENT === 'testing') {
             $this->defaultGroup = 'tests';
+        } elseif (ENVIRONMENT === 'development') {  //현재 .env에 CI_ENVIRONMENT = development
+            $this->defaultGroup = 'default';
+        } elseif (ENVIRONMENT === 'production') {
+            $this->defaultGroup = 'production';
         }
     }
 }

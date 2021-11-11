@@ -47,7 +47,11 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $methods = [];
+    //CSRF 공격이란, 인터넷 사용자가 자신의 의지와는 무관하게 공격자가 의도한 행위(등록, 수정, 삭제 등)를 특정 웹사이트에 요청하도록 만드는 공격입니다.
+    //※ 2008년에 발생했던 옥션의 개인정보 유출 사건에서도 관리자 계정을 탈취하는데 이 CSRF 방법이 사용되었습니다.
+    public $methods = [
+        'post' => ['csrf'],
+    ];
 
     /**
      * List of filter aliases that should run on any

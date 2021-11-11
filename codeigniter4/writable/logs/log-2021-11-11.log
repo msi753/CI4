@@ -1,0 +1,10 @@
+CRITICAL - 2021-11-11 00:20:08 --> Call to a member function listErrors() on null
+#0 D:\smallworld\codeigniter4\system\View\View.php(214): include()
+#1 D:\smallworld\codeigniter4\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 D:\smallworld\codeigniter4\system\Common.php(1097): CodeIgniter\View\View->render('news/create', Array, true)
+#3 D:\smallworld\codeigniter4\app\Controllers\News.php(60): view('news/create')
+#4 D:\smallworld\codeigniter4\system\CodeIgniter.php(824): App\Controllers\News->create()
+#5 D:\smallworld\codeigniter4\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\News))
+#6 D:\smallworld\codeigniter4\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\smallworld\codeigniter4\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
