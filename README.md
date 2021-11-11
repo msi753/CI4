@@ -1,7 +1,7 @@
 # 유저 가이드
 https://codeigniter.com/user_guide/
 
-## esc 함수
+## 기본 함수
 https://codeigniter.com/user_guide/general/common_functions.html
 
 ### esc($data[, $context = 'html'[, $encoding]])
